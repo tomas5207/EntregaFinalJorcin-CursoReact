@@ -23,7 +23,9 @@ const ItemListContainer = ({greeting, productsData}) =>{
                             </Card.Text>
                             <div>{products.stock} en venta</div>
                             <div>${products.price}</div>
+                            <Link to='https://www.pricecharting.com/' target='_blank'>
                             <Button variant="primary">Go somewhere</Button>
+                            </Link>
                             </Card.Body>
                             </Card> 
                         )
