@@ -4,8 +4,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
+import { useGetCategories } from '../hooks/useProducts';
 
 function NavBar() {
+    const {categories} = useGetCategories();
+
     return (
     <Navbar bg="dark" data-bs-theme="dark" expand="lg" className="bg-body-tertiary ">
     <Container>
@@ -20,11 +23,13 @@ function NavBar() {
             <Nav.Link eventKey="1" href="#info">Info</Nav.Link>
         */}
             <NavDropdown title="Card trading" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#trading/3.1">Pokemon</NavDropdown.Item>
-            <NavDropdown.Item href="#trading/3.2">
-                Digimon
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#trading/3.3">Yugi-oh</NavDropdown.Item>
+            {
+                categories.map((category, index) =>{
+                    return(
+                        <NavDropdown.Item key={index}><Link key={index} to={`/category/${category}`}>{category.name}</Link></NavDropdown.Item>
+                    )
+                })
+            }
         </NavDropdown>
         </Nav>
     </Navbar.Collapse>

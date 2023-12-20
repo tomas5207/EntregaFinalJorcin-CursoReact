@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 
 
 const ItemListContainer = ({greeting, productsData}) =>{
@@ -12,7 +13,9 @@ const ItemListContainer = ({greeting, productsData}) =>{
                     productsData.map(products =>{
                         return(
                             <Card bg="dark" text="info" key={products.id} style={{ width: '18rem' }}>
+                            <Link to={`/item/${products.id}`}>
                             <Card.Img variant="top" src={products.image}/>
+                            </Link>
                             <Card.Body>
                             <Card.Title>{products.title}</Card.Title>
                             <Card.Text>
