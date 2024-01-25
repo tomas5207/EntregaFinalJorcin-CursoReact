@@ -7,7 +7,7 @@ export const Home = () => {
     const {productsData} = useGetProducts();
 
 return (
-    <ItemListContainer greeting="Bienvenido a E-card.com" productsData={productsData}/>
+    <ItemListContainer greeting="Bienvenido a E-cards.com" productsData={productsData}/>
 )
 }
 

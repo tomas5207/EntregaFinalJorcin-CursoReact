@@ -21,5 +21,5 @@ export const Cart = () => {
 
     console.log(count);
         
-    return count.length === 0 ? (<h1>No hay items en el carrito</h1>) :  <div style={{display:"flex",justifyContent:"space-around",flexWrap:"wrap"}}>{rederizarCarrito()}</div>
+    return count.length === 0 ? (<h1 style={{color:"skyblue"}}>No hay items en el carrito</h1>) :  <div style={{display:"flex",justifyContent:"space-around",flexWrap:"wrap"}}>{rederizarCarrito()}</div>
 }

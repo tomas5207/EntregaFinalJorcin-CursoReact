@@ -9,7 +9,7 @@ const ItemListContainer = ({greeting, productsData}) =>{
     
     return(
         <div style={{fontWeight: "bold",  textAlign:"center", color:"skyblue"}}>
-            <div style={{fontSize: "2rem"}}>{greeting}</div>
+            <div style={{fontSize: "3rem"}}>{greeting}</div>
             <div style={{display:"flex",justifyContent:"space-around",flexWrap:"wrap"}}>
                 {
                     productsData.map(products =>{
