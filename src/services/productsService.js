@@ -14,5 +14,5 @@ export async function getCategories(){
 }
 
 export async function getProductsByCategory(id){
-    return await axios.get(`https://apireact.wabit.cl/api/$tomas/products/category/${id}`)
+    return await axios.get(`https://apireact.wabit.cl/api/tomas/products/category/${id}`)
 }

@@ -6,6 +6,7 @@ import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
 import { useGetCategories } from '../hooks/useProducts';
 
+
 function NavBar() {
     const {categories} = useGetCategories();
 
@@ -26,7 +27,9 @@ function NavBar() {
             {
                 categories.map((category, index) =>{
                     return(
-                        <NavDropdown.Item key={index}><Link key={index} to={`/category/${category}`}>{category.name}</Link></NavDropdown.Item>
+                        <NavDropdown.Item key={index}>
+                        <Link key={index} to={`/category/${category.id}`}>{category.name}</Link>
+                        </NavDropdown.Item>
                     )
                 })
             }

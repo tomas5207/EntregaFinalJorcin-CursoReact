@@ -21,7 +21,7 @@ export const useGetProductsById = (id) =>{
     useEffect(() => {
         getProductsById(id)
         .then(response => {
-        setProductData(response.data)
+        setProductData(response.data[0])
         })
         .catch(error => {console.log(error)});
         }, [id])
@@ -36,6 +36,7 @@ export const useGetCategories = () =>{
         getCategories()
         .then(response => {
         setCategories(response.data)
+        console.log()
         })
         .catch(error => {console.log(error)});
         }, [])
@@ -50,6 +51,7 @@ export const useGetProductsByCategory = (id) =>{
         getProductsByCategory(id)
         .then(response => {
         setProductsData(response.data)
+        console.log(response.data);
         })
         .catch(error => {console.log(error)});
         }, [id])

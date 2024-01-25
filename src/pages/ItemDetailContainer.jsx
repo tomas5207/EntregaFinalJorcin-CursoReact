@@ -3,12 +3,12 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { useGetProductsById } from '../hooks/useProducts'
 import { useParams } from 'react-router-dom'
+import ItemCount from '../components/ItemCount';
 
 
 export const ItemDetailContainer = () => {
   const { id } = useParams()
   const {productData} = useGetProductsById(id)
-  console.log(productData)
 {
   
   return (
@@ -21,7 +21,11 @@ export const ItemDetailContainer = () => {
     </Card.Text>
     <div>{productData.stock} en venta</div>
     <div>${productData.price}</div>
-    <Button variant="primary">Go somewhere</Button>
+    <ItemCount productId={productData.id} 
+    productName={productData.title} 
+    productDescription={productData.description} 
+    productPrice={productData.price}
+    productImage={productData.image}/>
     </Card.Body>
     </Card> 
   )
